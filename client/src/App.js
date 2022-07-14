@@ -7,6 +7,8 @@ import {
   createHttpLink,
 } from '@apollo/client';
 
+import Home from './pages/Home';
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
