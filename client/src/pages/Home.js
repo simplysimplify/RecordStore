@@ -10,14 +10,10 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
 	return (
-    <>
-      <h1>Record Store</h1>
-      <Link to="/login">Go to Login</Link>
-      <Link to="/signup">Go to Signup</Link>
-	  <Link to= "/search">Go to Search</Link>
-      {/* ${Discogs} */}
-    </>
-  );
+		<div className="container">
+			<h2>HOME</h2>
+		</div>
+	);
 };
 
 export default Home;
