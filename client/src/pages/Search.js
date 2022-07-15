@@ -1,10 +1,15 @@
 import React, { useState } from "react";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { SEARCH } from "../utils/mutations";
 
 function Search(props) {
-  const [formState, setFormState] = useState({ artist: "", album: "", song: "" });
-  const [search, {error}] = useMutation(SEARCH);
+  const [formState, setFormState] = useState({
+    artist: "",
+    album: "",
+    song: "",
+  });
+  const [search, { error }] = useMutation(SEARCH);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -27,11 +32,14 @@ function Search(props) {
   };
 
   return (
-    <>
-      <h2>Search</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="search">Artist Search:</label>
+    <Container>
+      <Row>
+        <h1>Record Store</h1>
+      </Row>
+      <Row>
+        <Form onSubmit={handleFormSubmit}>
+          <Form.Label htmlFor="search">Artist Search:</Form.Label>
+          <br></br>
           <input
             placeholder="Artist"
             name="query"
@@ -39,7 +47,9 @@ function Search(props) {
             id="artist"
             onChange={handleChange}
           />
-          <label htmlFor="search">Album Search:</label>
+          <br></br>
+          <Form.Label htmlFor="search">Album Search:</Form.Label>
+          <br></br>
           <input
             placeholder="Album"
             name="query"
@@ -47,7 +57,9 @@ function Search(props) {
             id="album"
             onChange={handleChange}
           />
-          <label htmlFor="search">Song Search:</label>
+          <br></br>
+          <Form.Label htmlFor="search">Song Search:</Form.Label>
+          <br></br>
           <input
             placeholder="Song"
             name="query"
@@ -55,10 +67,11 @@ function Search(props) {
             id="song"
             onChange={handleChange}
           />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </>
+          <br></br>
+          <button type="submit">Submit</button>
+        </Form>
+      </Row>
+    </Container>
   );
 }
 

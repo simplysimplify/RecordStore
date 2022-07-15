@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 // var Discogs = require('disconnect').Client;
 
 // var db = new Discogs().database();
@@ -8,10 +10,14 @@ import React from "react";
 
 const Home = () => {
 	return (
-		<div className="container">
-			{/* ${Discogs} */}
-        </div>
-  	);
+    <>
+      <h1>Record Store</h1>
+      <Link to="/login">Go to Login</Link>
+      <Link to="/signup">Go to Signup</Link>
+	  <Link to= "/search">Go to Search</Link>
+      {/* ${Discogs} */}
+    </>
+  );
 };
 
 export default Home;
