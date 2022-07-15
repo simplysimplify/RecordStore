@@ -8,15 +8,9 @@ import React from "react";
 
 const Home = () => {
 	return (
-<<<<<<< HEAD
 		<div className="container">
 			{/* ${Discogs} */}
         </div>
-=======
-    	<div className="container">
-			<h2>HOME</h2>
-    	</div>
->>>>>>> 12a72f9afd0100e9e7d7aac99354e1e2823f0e55
   	);
 };
 
