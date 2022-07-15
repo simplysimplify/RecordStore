@@ -1,5 +1,4 @@
 
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
@@ -11,7 +10,6 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import { StoreProvider } from './utils/GlobalState';
 import Home from './pages/Home';
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
