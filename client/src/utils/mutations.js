@@ -33,17 +33,15 @@ export const ADD_USER = gql`
 `;
 
 export const SEARCH = gql`
-  mutation addUser(
-    $firstName: String!
-    $lastName: String!
-    $email: String!
-    $password: String!
+  mutation search(
+    $artist: String
+    $album: String
+    $song: String
   ) {
-    addUser(
-      firstName: $firstName
-      lastName: $lastName
-      email: $email
-      password: $password
+    search(
+      artist: $artist
+      album: $album
+      song: $song
     ) {
       token
       user {
