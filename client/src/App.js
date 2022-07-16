@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
@@ -12,6 +11,8 @@ import Home from './pages/Home';
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Search from "./pages/Search";
+import Results from "./pages/results";
+
 
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css";
@@ -43,8 +44,8 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Search />} />
+            <Route path="/results" element={<Results />} />
           </Routes>
         </div>
       </Router>

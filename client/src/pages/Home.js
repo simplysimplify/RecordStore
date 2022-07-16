@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 // var Discogs = require('disconnect').Client;
 
 // var db = new Discogs().database();
