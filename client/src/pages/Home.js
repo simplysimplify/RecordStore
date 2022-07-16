@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 // var Discogs = require('disconnect').Client;
 
 // var db = new Discogs().database();
@@ -7,11 +9,13 @@ import React from "react";
 // });
 
 const Home = () => {
-  return (
-    <div className="container">
-      <h2>HOME</h2>
-    </div>
-  );
+
+	return (
+		<div className="container">
+			<h2>HOME</h2>
+		</div>
+	);
+
 };
 
 export default Home;
