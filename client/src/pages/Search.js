@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Form } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
+import { Link } from "react-router-dom";
 import { SEARCH } from "../utils/mutations";
 
-import Results from "./results";
 
 const data = [
   {
@@ -61,7 +60,7 @@ function Search(props) {
         song: formState.song,
       },
     });
-    const token = mutationResponse.data.search.token;
+    localStorage.setItem("search_term", mutationResponse);
   };
 
   const handleChange = (event) => {
@@ -73,47 +72,48 @@ function Search(props) {
   };
 
   return (
-    <Container>
-      <Row>
-        <h1>Record Store</h1>
-      </Row>
-      <Row>
-        <Form onSubmit={handleFormSubmit}>
-          <Form.Label htmlFor="search">Artist Search:</Form.Label>
-          <br></br>
+    <div className="container my-1">
+      <Link to="/signup">Go to Signup</Link>
+      <br></br>
+      <Link to="/login">Go to Login</Link>
+
+      <h2>Record Store</h2>
+      <form onSubmit={handleFormSubmit}>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="email">Search Artist:</label>
           <input
             placeholder="Artist"
-            name="query"
+            name="artist"
             type="text"
             id="artist"
             onChange={handleChange}
           />
-          <br></br>
-          <Form.Label htmlFor="search">Album Search:</Form.Label>
-          <br></br>
+        </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="pwd">Search Album:</label>
           <input
             placeholder="Album"
-            name="query"
+            name="album"
             type="text"
             id="album"
             onChange={handleChange}
           />
-          <br></br>
-          <Form.Label htmlFor="search">Song Search:</Form.Label>
-          <br></br>
+        </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="pwd">Search Song:</label>
           <input
             placeholder="Song"
-            name="query"
+            name="song"
             type="text"
             id="song"
             onChange={handleChange}
           />
+        </div>
+        <div className="flex-row flex-end">
           <button type="submit">Submit</button>
-        </Form>
-        <Results data={data} />
-        {/* Results({data: data}) */}
-      </Row>
-    </Container>
+        </div>
+      </form>
+    </div>
   );
 }
 
