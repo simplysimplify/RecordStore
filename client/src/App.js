@@ -14,11 +14,11 @@ import Search from "./pages/Search";
 import Results from "./pages/results";
 
 
-import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css";
 
-const httpLink = createHttpLink({
+const link = createHttpLink({
   uri: "/graphql",
+  credentials: "same-origin",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -35,6 +35,7 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
 
 function App() {
   return (
