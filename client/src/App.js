@@ -15,11 +15,7 @@ import Results from "./pages/results";
 import "./App.css";
 
 const httpLink = createHttpLink({
-<<<<<<< HEAD
- uri: "/graphql",
-=======
   uri: "/graphql",
->>>>>>> 102d4901b65060f047de7ded96bf64d33e643bc3
 });
 
 const authLink = setContext((_, { headers }) => {
