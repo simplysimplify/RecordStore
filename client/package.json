@@ -2,7 +2,11 @@
   "name": "record-store",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
   "proxy": "http://localhost:3001",
+=======
+  "proxy": "http://localhost:3001/",
+>>>>>>> 102d4901b65060f047de7ded96bf64d33e643bc3
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@testing-library/jest-dom": "^5.16.4",
