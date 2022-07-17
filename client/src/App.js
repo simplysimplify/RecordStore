@@ -11,15 +11,12 @@ import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Search from "./pages/Search";
 import Results from "./pages/results";
+import Home from "./pages/Home";
 
 import "./App.css";
 
 const httpLink = createHttpLink({
-<<<<<<< HEAD
  uri: "/graphql",
-=======
-  uri: "/graphql",
->>>>>>> 102d4901b65060f047de7ded96bf64d33e643bc3
 });
 
 const authLink = setContext((_, { headers }) => {
