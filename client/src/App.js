@@ -12,11 +12,11 @@ import Signup from "./pages/signup";
 import Search from "./pages/Search";
 import Results from "./pages/results";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-const httpLink = createHttpLink({
+const link = createHttpLink({
  uri: "/graphql",
+ credentials: "same-origin",
 });
 
 const authLink = setContext((_, { headers }) => {
