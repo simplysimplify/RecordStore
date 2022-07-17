@@ -1,31 +1,26 @@
 {
-  "name": "recordstore",
-  "version": "1.0.0",
-  "description": "Refactor of Discogs to be more user friendly",
-  "main": "index.js",
-  "scripts": {
-    "start": "node server/server.js",
-    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
-    "install": "cd server && npm i && cd ../client && npm i",
-    "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/simplysimplify/RecordStore.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/simplysimplify/RecordStore/issues"
-  },
-  "homepage": "https://github.com/simplysimplify/RecordStore#readme",
-  "dependencies": {
-    "concurrently": "^7.2.2",
-    "express": "^4.18.1",
-    "graph": "^0.2.0",
-    "jest": "^28.1.3",
-    "mongo": "^0.1.0",
-    "react": "^18.2.0"
-  }
+ "name": "recordstore",
+ "version": "1.0.0",
+ "description": "Refactor of Discogs to be more user friendly",
+ "main": "index.js",
+ "scripts": {
+  "start": "node server/server.js",
+  "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
+  "install": "cd server && npm i && cd ../client && npm i",
+  "seed": "cd server && npm run seed",
+  "build": "cd client && npm run build"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/simplysimplify/RecordStore.git"
+ },
+ "author": "",
+ "license": "ISC",
+ "bugs": {
+  "url": "https://github.com/simplysimplify/RecordStore/issues"
+ },
+ "homepage": "https://github.com/simplysimplify/RecordStore#readme",
+ "dependencies": {
+  "concurrently": "^7.2.2"
+ }
 }

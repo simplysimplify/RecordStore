@@ -8,6 +8,10 @@ function Signup(props) {
  const [formState, setFormState] = useState({ email: "", password: "" });
  const [addUser, { error }] = useMutation(ADD_USER);
 
+ if (error) {
+  console.log(JSON.stringify(error));
+ }
+
  const handleFormSubmit = async (event) => {
   event.preventDefault();
   const mutationResponse = await addUser({
