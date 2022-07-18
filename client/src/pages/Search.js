@@ -75,14 +75,13 @@ function Search(props) {
     <>
       <div className="container col-12 d-flex flex-column text-center align-content-center justify-content-center">
         <h1 className="jumbotron">Record Store!</h1>
-          <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+          <DropdownButton className="mb-1" id="dropdown-basic-button" title="Search By">
+            <Dropdown.Item href="">Artist</Dropdown.Item>
+            <Dropdown.Item href="">Album</Dropdown.Item>
           </DropdownButton>
         <input
           className="col-4 mx-auto text-center"
-          placeholder="Enter Artist/Album/Song Here!"
+          placeholder="Enter Artist/Album Here!"
           name="query"
           type="text"
           id="query"
