@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
- ApolloClient,
- InMemoryCache,
- ApolloProvider,
- createHttpLink,
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import Nav from "./components/Nav";
 
 import Login from "./pages/login";
 import Signup from "./pages/signup";
@@ -20,35 +21,36 @@ const httpLink = createHttpLink({
 });
 
 const authLink = setContext((_, { headers }) => {
- const token = localStorage.getItem("id_token");
- return {
-  headers: {
-   ...headers,
-   authorization: token ? `Bearer ${token}` : "",
-  },
- };
+  const token = localStorage.getItem("id_token");
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
 });
 
 const client = new ApolloClient({
- link: authLink.concat(httpLink),
- cache: new InMemoryCache(),
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
 });
 
 function App() {
- return (
-  <ApolloProvider client={client}>
-   <Router>
-    <div>
-     <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/" element={<Search />} />
-      <Route path="/results" element={<Results data=""/>} />
-     </Routes>
-    </div>
-   </Router>
-  </ApolloProvider>
- );
+  return (
+    <ApolloProvider client={client}>
+      <Router>
+        <div>
+          <Nav />
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/" element={<Search />} />
+            <Route path="/results" element={<Results />} />
+          </Routes>
+        </div>
+      </Router>
+    </ApolloProvider>
+  );
 }
 
 export default App;
