@@ -6,13 +6,13 @@ import Results from "./results"
 
 const data = [
   {
-    artistName: "Mistah F.A.B., The Mekanix", 
-    album: "AmeriKKKa Dont Love Us",
-    topHits: "Power",
-    lastTour: "Look Outside",
+    artistName: "Wiz Khalifa", 
+    album: "Black and Yellow",
+    topHits: "Black and Yellow",
+    lastTour: "Denver",
   },
   {
-    artistName: "E", 
+    artistName: "Empire of the Sun", 
     album: "walking on a Dream",
     topHits: "Walking on a Dream",
     lastTour: "Denver",
