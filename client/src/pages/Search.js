@@ -58,7 +58,7 @@ function Search(props) {
     //    },
     //   });
     //   localStorage.setItem("search_term", mutationResponse);
-    getArtist(formState.query);
+    getAlbum(formState.query);
   };
 
   const handleChange = (event) => {
