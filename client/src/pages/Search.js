@@ -48,18 +48,6 @@ function Search(props) {
   const [formState, setFormState] = useState({
     query: "",
   });
-<<<<<<< HEAD
-  const [search, { error }] = useMutation(SEARCH);
-
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    const mutationResponse = await search({
-      variables: {
-        query: "query",
-      },
-    });
-    localStorage.setItem("search_term", mutationResponse);
-=======
   //  const [search, { error }] = useMutation(SEARCH);
 
   const handleFormSubmit = async (event) => {
@@ -71,7 +59,6 @@ function Search(props) {
     //   });
     //   localStorage.setItem("search_term", mutationResponse);
     getArtist(formState.query);
->>>>>>> abe7011456745a359133ef2098a6d416304d851a
   };
 
   const handleChange = (event) => {
