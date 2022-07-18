@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { SEARCH } from "../utils/mutations";
-import Card from "../components/Card/card";
+import Card from "../components/card";
+import { getArtist, getAlbum } from "../utils/api";
 
 const data = [
   {
@@ -47,6 +48,7 @@ function Search(props) {
   const [formState, setFormState] = useState({
     query: "",
   });
+<<<<<<< HEAD
   const [search, { error }] = useMutation(SEARCH);
 
   const handleFormSubmit = async (event) => {
@@ -57,6 +59,19 @@ function Search(props) {
       },
     });
     localStorage.setItem("search_term", mutationResponse);
+=======
+  //  const [search, { error }] = useMutation(SEARCH);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    //   const mutationResponse = await search({
+    //     variables: {
+    //      query: "query"
+    //    },
+    //   });
+    //   localStorage.setItem("search_term", mutationResponse);
+    getArtist(formState.query);
+>>>>>>> abe7011456745a359133ef2098a6d416304d851a
   };
 
   const handleChange = (event) => {
