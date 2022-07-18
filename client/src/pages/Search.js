@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { SEARCH } from "../utils/mutations";
 import Card from "../components/card";
+import Results from "./results"
 
 const data = [
  {
@@ -67,7 +68,7 @@ function Search(props) {
   });
  };
 
- return (
+  return (
   <>
     <div className="container col-12 d-flex flex-column text-center align-content-center justify-content-center">
       <h1 className="jumbotron">
@@ -89,7 +90,7 @@ function Search(props) {
       
     </div>
   </>
- );
+  );
 }
 
 export default Search;
