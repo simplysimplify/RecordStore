@@ -11,8 +11,11 @@ import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Search from "./pages/Search";
 import Results from "./pages/results";
+<<<<<<< HEAD
 import NoMatch from "./pages/NoMatch";
 import Home from "./pages/Home";
+=======
+>>>>>>> 2f64ad444b5b7cab82a9fcff8418877192fd203e
 
 import "./App.css";
 
