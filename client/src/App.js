@@ -12,7 +12,6 @@ import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Search from "./pages/Search";
 import Results from "./pages/results";
-import Home from "./pages/Home";
 
 import "./App.css";
 
