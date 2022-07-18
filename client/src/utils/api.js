@@ -8,14 +8,27 @@ export function getArtist(query) {
     )
     .then((res) => {
       const artistUrl = res.data.results[0].resource_url;
-      console.log(res.data)
+      // console.log(res.data)
       axios
         .get(
           `${artistUrl}/releases`
         )
         .then((res) => {
           const results = res.data.releases;
-          console.log(results);
+          // const filter = results.filter(item => {
+          //   results.title(item) === item.title;
+          // });
+          // console.log(results);
+          const filteredResults = [];
+          const unique = results.filter(element => {
+            const isDuplicate = filteredResults.includes(element.title);
+            if (!isDuplicate) {
+              filteredResults.push(element.id);
+              return true;
+            }
+            return false;
+          })
+          console.log(unique);
           // window.location.assign("/results");
           return results;
         });
@@ -37,4 +50,8 @@ export function getAlbum(query) {
         return results;
       });
     });
+}
+
+function uniq(a) {
+  return Array.from(new Set(a));
 }
