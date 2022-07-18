@@ -5,8 +5,11 @@ import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { SEARCH } from "../utils/mutations";
 import { Card } from "../components/Card";
-import { getArtist, getAlbum } from "../utils/api";
+import API from "../utils/api";
+
 import Results from "./results"
+
+
 
 const data = [
   {
@@ -49,19 +52,22 @@ const data = [
 
 function Search(props) {
   const [formState, setFormState] = useState({
-    query: "",
+    query: [],
   });
+
+  const [results, setResults] = useState([])
   //  const [search, { error }] = useMutation(SEARCH);
 
   const [value, setValue] = useState("Search by  ")
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    
     if (value === "Album") {
-      return getAlbum(formState.query);
+      const res = await API.getAlbum(formState.query);
+      setResults(res)
     } else {
-      return getArtist(formState.query);
+      const res = await API.getArtist(formState.query);
+      setResults(res)
     }
   };
 
@@ -70,7 +76,7 @@ function Search(props) {
     setFormState({
       ...formState,
       [name]: value,
-    });
+    })
   };
 
   const handleSelect = (target) => {
@@ -102,7 +108,8 @@ function Search(props) {
         </button>
       </div>
       <div>
-        <Results props={handleFormSubmit} />
+        <Results data={results} />
+        {/* Results({data: formState.query}) */}
       </div>
     </>
   );
