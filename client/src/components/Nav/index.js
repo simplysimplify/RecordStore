@@ -14,10 +14,10 @@ function Nav() {
     } else {
       return (
         <ul className="flex-row">
-          <li className="mx-1">
+          <li className="mx-1 list-group-item">
             <Link to="/signup">Signup</Link>
           </li>
-          <li className="mx-1">
+          <li className="mx-1 list-group-item">
             <Link to="/login">Login</Link>
           </li>
         </ul>
@@ -27,7 +27,7 @@ function Nav() {
 
   return (
     <header className="flex-row px-1">
-      <h1>
+      <h1 className="header">
         <Link to="/">Record Store!</Link>
       </h1>
       <nav>{showNavigation()}</nav>
