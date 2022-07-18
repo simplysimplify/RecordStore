@@ -7,11 +7,11 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import Nav from "./components/Nav";
-
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Search from "./pages/Search";
 import Results from "./pages/results";
+import NoMatch from "./pages/NoMatch";
 import Home from "./pages/Home";
 
 import "./App.css";
@@ -46,6 +46,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/" element={<Search />} />
             <Route path="/results" element={<Results />} />
+            <Route path="*" element={<NoMatch />} />
           </Routes>
         </div>
       </Router>
