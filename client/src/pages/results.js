@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // import { useMutation } from "@apollo/client";
 // import { SEARCH } from "../utils/mutations";
 
-import Card from "../components/card";
+import Card from "../components/Card/card";
 
 export default function Results(props) {
   const [searchData, setSearchData] = useState(
