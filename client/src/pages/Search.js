@@ -1,3 +1,5 @@
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
@@ -73,6 +75,11 @@ function Search(props) {
     <>
       <div className="container col-12 d-flex flex-column text-center align-content-center justify-content-center">
         <h1 className="jumbotron">Record Store!</h1>
+          <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+          </DropdownButton>
         <input
           className="col-4 mx-auto text-center"
           placeholder="Enter Artist/Album/Song Here!"
