@@ -18,7 +18,7 @@ export default function Results(props) {
     <Container className="d-flex flex-wrap justify-content-center">
       {props.data.map((obj, i) => (
           <Card key={i} className="m-2">
-            { obj.artists > 0 ?
+            { obj.artists ?
             <AlbumCard obj={obj} />
             :
             <ArtistCard obj={obj} /> }
