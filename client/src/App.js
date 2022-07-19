@@ -13,7 +13,6 @@ import Search from "./pages/Search";
 import Results from "./pages/results";
 import NoMatch from "./pages/NoMatch";
 
-import "./App.css";
 
 const httpLink = createHttpLink({
   uri: "/graphql",

@@ -1,5 +1,5 @@
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
@@ -7,9 +7,7 @@ import { SEARCH } from "../utils/mutations";
 import { Card } from "../components/Card";
 import API from "../utils/api";
 
-import Results from "./results"
-
-
+import Results from "./results";
 
 const data = [
   {
@@ -55,20 +53,20 @@ function Search(props) {
     query: [],
   });
 
-  const [results, setResults] = useState([])
+  const [results, setResults] = useState([]);
   //  const [search, { error }] = useMutation(SEARCH);
 
-  const [value, setValue] = useState("Search by  ")
+  const [value, setValue] = useState("Search by  ");
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    setFormState({ submitted: true })
+    setFormState({ submitted: true });
     if (value === "Album") {
       const res = await API.getAlbum(formState.query);
-      setResults([res])
+      setResults([res]);
     } else {
       const res = await API.getArtist(formState.query);
-      setResults(res)
+      setResults(res);
     }
   };
 
@@ -77,25 +75,30 @@ function Search(props) {
     setFormState({
       ...formState,
       [name]: value,
-    })
+    });
   };
 
   const handleSelect = (target) => {
-    setValue(target)
-  }
+    setValue(target);
+  };
 
-  function renderResults() {
-    return <Results props={handleFormSubmit()} />
-  }
+  // function renderResults() {
+  //   return <Results props={handleFormSubmit()} />
+  // }
 
   return (
     <>
       <div className="container col-12 d-flex flex-column text-center align-content-center justify-content-center">
         <h1 className="jumbotron">Record Store!</h1>
-          <DropdownButton onSelect={handleSelect} className="mb-1" id="dropdown-basic-button" title={value}>
-            <Dropdown.Item eventKey="Artist">Artist</Dropdown.Item>
-            <Dropdown.Item eventKey="Album">Album</Dropdown.Item>
-          </DropdownButton>
+        <DropdownButton
+          onSelect={handleSelect}
+          className="mb-1"
+          id="dropdown-basic-button"
+          title={value}
+        >
+          <Dropdown.Item eventKey="Artist">Artist</Dropdown.Item>
+          <Dropdown.Item eventKey="Album">Album</Dropdown.Item>
+        </DropdownButton>
         <input
           className="col-4 mx-auto text-center"
           placeholder="Search"
@@ -112,9 +115,7 @@ function Search(props) {
           Submit
         </button>
       </div>
-      <div>
-        <Results data={results} />
-      </div>
+      <Results data={results} />
     </>
   );
 }
