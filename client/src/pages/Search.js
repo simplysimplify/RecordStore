@@ -65,7 +65,7 @@ function Search(props) {
     setFormState({ submitted: true })
     if (value === "Album") {
       const res = await API.getAlbum(formState.query);
-      setResults(res)
+      setResults([res])
     } else {
       const res = await API.getArtist(formState.query);
       setResults(res)
