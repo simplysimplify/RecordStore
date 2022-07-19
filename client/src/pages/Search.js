@@ -13,8 +13,8 @@ import Results from "./results"
 
 const data = [
   {
-    artistName: "Wiz Khalifa",
-    album: "Rolling Papers",
+    artistName: "Wiz Khalifa", 
+    album: "Black and Yellow",
     topHits: "Black and Yellow",
     lastTour: "Denver",
   },
