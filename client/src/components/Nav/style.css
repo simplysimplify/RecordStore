@@ -1,18 +1,15 @@
 a {
-  box-shadow: inset 0 0 0 0 #777d80;
-  color: #283135;
+  color: #65757c;
   padding: 0 0.25rem;
   margin: 0 -0.25rem;
-  transition: color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
   justify-content: center;
 }
 a:hover {
-  color: #fff;
-  box-shadow: inset 200px 0 0 0 #283135;
+  color: rgb(191, 194, 240);
 }
 
 a {
-  color: #283135;
+  color: #7c898f;
   font-family: "Poppins", sans-serif;
   font-size: 35px;
   font-weight: 700;
