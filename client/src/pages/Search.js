@@ -9,48 +9,11 @@ import API from "../utils/api";
 
 import Results from "./results";
 
-const data = [
-  {
-    artistName: "Wiz Khalifa", 
-    album: "Black and Yellow",
-    topHits: "Black and Yellow",
-    lastTour: "Denver",
-  },
-  {
-    artistName: "Empire of the Sun",
-    album: "walking on a Dream",
-    topHits: "Walking on a Dream",
-    lastTour: "Denver",
-  },
-  {
-    artistName: "Drama",
-    album: "Dance Without Me",
-    topHits: "Dance Without Me",
-    lastTour: "Denver",
-  },
-  {
-    artistName: "Baynk",
-    album: "Adolescence",
-    topHits: "Naked",
-    lastTour: "Denver",
-  },
-  {
-    artistName: "Louis the child",
-    album: "single",
-    topHits: "Every Color",
-    lastTour: "Denver",
-  },
-  {
-    artistName: "EST Gee",
-    album: "Last Ones Left",
-    topHits: "Ice Talk ft. 42 Dugg",
-    lastTour: "Denver",
-  },
-];
+const queryBar = document.getElementById("query")
 
 function Search(props) {
   const [formState, setFormState] = useState({
-    query: [],
+    query: "",
   });
 
   const [results, setResults] = useState([]);
@@ -60,14 +23,14 @@ function Search(props) {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    setFormState({ submitted: true });
     if (value === "Album") {
       const res = await API.getAlbum(formState.query);
       setResults([res]);
-    } else {
+      } else {
       const res = await API.getArtist(formState.query);
       setResults(res);
     }
+    setFormState({query: "",})
   };
 
   const handleChange = (event) => {
@@ -105,6 +68,7 @@ function Search(props) {
           name="query"
           type="text"
           id="query"
+          value={formState.query}
           onChange={handleChange}
         />
         <button
