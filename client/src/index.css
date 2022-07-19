@@ -27,11 +27,15 @@ body {
   font-size: 16px;
   color: var(--dark);
   background-image: url("../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-position: center;
   background-color: #cccccc;
+  max-height: 100vh;
   z-index: -100;
 }
 
