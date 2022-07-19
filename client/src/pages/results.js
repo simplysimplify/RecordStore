@@ -10,7 +10,6 @@ export default function Results(props) {
   // const [searchData, setSearchData] = useState(
   //   props.data.length > 0 ? props.data : []
   // );
-  console.log(props)
   return (
     <ul>
       {props.data.map((obj, i) => (

@@ -3,10 +3,9 @@ import React from 'react'
 export default function Card({obj}) {
     return (
         <div>
-            <h3>Artist: {obj.artistName}</h3>
-            <p>album: {obj.album}</p>
-            <p>topHits: {obj.topHits}</p>
-            <p>lastTour: {obj.lastTour}</p>
+            <h3>Artist: {obj.artist}</h3>
+            <p>album: {obj.title}</p>
+            <p>Release Year: {obj.year}</p>
         </div>
     )
 }

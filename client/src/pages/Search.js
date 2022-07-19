@@ -62,9 +62,10 @@ function Search(props) {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    setFormState({ submitted: true })
     if (value === "Album") {
       const res = await API.getAlbum(formState.query);
-      setResults(res)
+      setResults([res])
     } else {
       const res = await API.getArtist(formState.query);
       setResults(res)
@@ -81,6 +82,10 @@ function Search(props) {
 
   const handleSelect = (target) => {
     setValue(target)
+  }
+
+  function renderResults() {
+    return <Results props={handleFormSubmit()} />
   }
 
   return (
@@ -109,7 +114,6 @@ function Search(props) {
       </div>
       <div>
         <Results data={results} />
-        {/* Results({data: formState.query}) */}
       </div>
     </>
   );
