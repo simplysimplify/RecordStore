@@ -12,6 +12,10 @@ body {
   z-index: -100;
 }
 
+a {
+  font-size: small;
+}
+
 .App {
   text-align: center;
 }

@@ -15,8 +15,7 @@ export function ArtistCard({ obj }) {
   );
 }
 
-export function AlbumCard({ obj }) {
-    console.log(obj)
+export function AlbumCard({ obj }) { 
   return (
     <Card.Body>
       <Card.Title>{obj.title}</Card.Title>
@@ -24,6 +23,7 @@ export function AlbumCard({ obj }) {
         <Card.Text key={i}>Artist: {artist.name}</Card.Text>
       ))}
       <Card.Text>Release Year: {obj.year}</Card.Text>
+      <a href={obj.uri} rel="noopener" target="_blank">Click here to visit store page.</a>
     </Card.Body>
   );
 }

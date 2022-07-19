@@ -9,7 +9,6 @@ import API from "../utils/api";
 
 import Results from "./results";
 
-const queryBar = document.getElementById("query")
 
 function Search(props) {
   const [formState, setFormState] = useState({
