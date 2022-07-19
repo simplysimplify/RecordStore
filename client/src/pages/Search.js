@@ -50,6 +50,7 @@ const data = [
 function Search(props) {
   const [formState, setFormState] = useState({
     query: "",
+    submitted: false,
   });
   //  const [search, { error }] = useMutation(SEARCH);
 
@@ -57,7 +58,7 @@ function Search(props) {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    
+    setFormState({ submitted: true })
     if (value === "Album") {
       return getAlbum(formState.query);
     } else {
@@ -75,6 +76,10 @@ function Search(props) {
 
   const handleSelect = (target) => {
     setValue(target)
+  }
+
+  function renderResults() {
+    return <Results props={handleFormSubmit()} />
   }
 
   return (
@@ -102,7 +107,7 @@ function Search(props) {
         </button>
       </div>
       <div>
-        <Results props={handleFormSubmit} />
+        {formState.submitted && renderResults()}
       </div>
     </>
   );
