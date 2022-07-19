@@ -12,7 +12,7 @@ import Signup from "./pages/signup";
 import Search from "./pages/Search";
 import Results from "./pages/results";
 import NoMatch from "./pages/NoMatch";
-
+import Wishlist from "./pages/Wishlist"
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -45,6 +45,7 @@ function App() {
             <Route path="/" element={<Search />} />
             <Route path="/results" element={<Results />} />
             <Route path="*" element={<NoMatch />} />
+            <Route path="/wishlist" element={<Wishlist/>}/>
           </Routes>
           {/* <img src="../images/bg.jpg" id="bg" alt=""></img> */}
         </div>

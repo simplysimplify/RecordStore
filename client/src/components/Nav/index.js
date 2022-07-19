@@ -7,9 +7,14 @@ function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <a href="/" onClick={() => Auth.logout()}>
-          Logout
-        </a>
+        <>
+          <a href="/" onClick={() => Auth.logout()}>
+            Logout
+          </a>
+          <a href="/" onClick={() => Auth.logout()}>
+            Wishlist
+          </a>
+        </>
       );
     } else {
       return (
