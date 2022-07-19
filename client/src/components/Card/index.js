@@ -1,11 +1,24 @@
-import React from 'react'
+import React from "react";
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
-export default function Card({obj}) {
-    return (
-        <div>
-            <h3>Artist: {obj.artist}</h3>
-            <p>album: {obj.title}</p>
-            <p>Release Year: {obj.year}</p>
-        </div>
-    )
+export function ArtistCard({ obj }) {
+  return (
+    <Card.Body>
+      <Card.Title>{obj.title}</Card.Title>
+      <Card.Text>Artist: {obj.artist}</Card.Text>
+      <Card.Text>Release Year: {obj.year}</Card.Text>
+    </Card.Body>
+  );
+}
+
+export function AlbumCard({ obj }) {
+  return (
+    <Card.Body>
+      <Card.Title>{obj.title}</Card.Title>
+      <Card.Text>Artist: {obj.artist}</Card.Text>
+      <Card.Text>Release Year: {obj.year}</Card.Text>
+    </Card.Body>
+  );
 }
