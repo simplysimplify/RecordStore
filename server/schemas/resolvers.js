@@ -5,8 +5,13 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
+<<<<<<< HEAD
     user: async () => {
       return await User.findOne();
+=======
+    user: async (parent, args, context) => {
+      return await User.findOne({ _id: context.user._id });
+>>>>>>> f936962b92d72af57054eb6d62745443176d2647
     },
   },
 
@@ -29,7 +34,6 @@ const resolvers = {
     addWishlist: async (parent, args, context) => {
       if (context.user) {
         try {
-          console.log(args)
           const wishlist = await Wishlist.create(args);
           await User.findByIdAndUpdate(context.user._id, { $push: { wishlist: wishlist } }, {
             new: true,
