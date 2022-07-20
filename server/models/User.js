@@ -23,7 +23,7 @@ const userSchema = new Schema({
   unique: true,
  },
  
- wishlists: [Wishlist.schema]
+ wishlist: [Wishlist.schema]
 });
 
 userSchema.pre("save", async function (next) {
