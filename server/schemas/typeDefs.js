@@ -5,7 +5,7 @@ type User {
     username: String
     password: String
     email: String
-    wishlists: [Wishlist]
+    wishlist: [Wishlist]
 }
 
 type Wishlist {
@@ -21,8 +21,7 @@ type Auth {
 }
 
 type Query {
-    user: [User]
-    wishlists: [Wishlist]
+    user: User
 }
 
 type Mutation {
