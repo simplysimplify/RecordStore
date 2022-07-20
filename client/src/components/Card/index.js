@@ -4,9 +4,13 @@ import { ADD_WISHLIST } from "../../utils/mutations";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-const [addWishlist, {error}] = useMutation(ADD_WISHLIST);
+import { useMutation } from "@apollo/client";
+
+
+
 
 export function ArtistCard({ obj }) {
+
   return (
     <Card.Body>
       <Card.Title>{obj.title}</Card.Title>
@@ -17,6 +21,27 @@ export function ArtistCard({ obj }) {
 }
 
 export function AlbumCard({ obj }) { 
+
+  const [addWishlist, { error }] = useMutation(ADD_WISHLIST);
+
+  if (error) {
+    console.log(JSON.stringify(error))
+  }
+
+  function handleAdd(event) {
+    event.preventDefault();
+    const sendData = {
+      artist: obj.artists[0].name,
+      title:obj.title,
+      release: obj.year+"",
+      website: obj.uri
+    }
+    addWishlist({
+      variables: sendData
+    })
+    console.log(sendData)
+  }
+
   return (
     <Card.Body>
       <Card.Title>{obj.title}</Card.Title>
@@ -28,9 +53,4 @@ export function AlbumCard({ obj }) {
       <Button onClick={handleAdd}>Add to Wishlist</Button>
     </Card.Body>
   );
-}
-
-function handleAdd(event, { obj }) {
-  event.preventDefault();
-  
 }

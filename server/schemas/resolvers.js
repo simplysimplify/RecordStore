@@ -5,12 +5,9 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    users: async () => {
+    user: async () => {
       return await User.find();
     },
-    wishlists: async () => {
-      return await Wishlist.find();
-    }
   },
 
   Mutation: {
@@ -29,10 +26,21 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
-    addWishlist: async (parent, args) => {
-      const wishlist = await wishlist.create(args);
-      const token = signToken(wishlist);
-      return { token, wishlist };
+    addWishlist: async (parent, args, context) => {
+      if (context.user) {
+        try {
+          console.log(args)
+          const wishlist = await Wishlist.create(args);
+          await User.findByIdAndUpdate(context.user._id, { $push: { wishlist: wishlist } }, {
+            new: true,
+          });
+          return wishlist;
+        }
+        catch (error) {
+          console.log(error)
+          return error
+        }
+      }
     },
 
     login: async (parent, { email, password }) => {

@@ -24,13 +24,12 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_WISHLIST = gql`
- mutation wishlist($artist: String, $album: String, $song: String) {
-  search(artist: $artist, album: $album, song: $song) {
-   token
-   user {
-    _id
-   }
+ mutation wishlist($artist: String!, $title: String!, $release: String!, $website: String!) {
+  addWishlist(artist: $artist, title: $title, release: $release, website: $website) {
+    title
+    artist
+    release
+    website
   }
  }
 `;
-

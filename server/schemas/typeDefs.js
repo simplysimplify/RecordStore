@@ -5,13 +5,14 @@ type User {
     username: String
     password: String
     email: String
-    wishlists: [Wishlist!]!
+    wishlists: [Wishlist]
 }
 
 type Wishlist {
-    album: String!
+    title: String!
     artist: String!
     release: String!
+    website: String!
 }
 
 type Auth {
@@ -20,7 +21,7 @@ type Auth {
 }
 
 type Query {
-    users: [User]
+    user: [User]
     wishlists: [Wishlist]
 }
 
@@ -28,7 +29,7 @@ type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     updateUser(username: String, email: String, password: String): User
     login(email: String!, password: String!): Auth
-    addWishlist(artist: String, album: String, release: String):Wishlist
+    addWishlist(artist: String!, title: String!, release: String!, website: String!):Wishlist
 }
 `;
 

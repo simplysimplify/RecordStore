@@ -1,4 +1,7 @@
-const { Schema, model } = require("mongoose");
+
+const mongoose = require('mongoose');
+
+const { Schema } = mongoose;
 
 const wishlistSchema = new Schema({
 	artist: {
@@ -6,7 +9,7 @@ const wishlistSchema = new Schema({
     	required: true,
 		trim: true
 	},
-	album: {
+	title: {
     	type: String,
     	required: true,
 		trim: true
@@ -16,8 +19,13 @@ const wishlistSchema = new Schema({
     	required: true,
 		trim: true
 	},
+	website: {
+		type: String,
+		required: true,
+		trim: true
+	}
 })
 
-const Wishlist = model("Wishlist", wishlistSchema);
+const Wishlist = mongoose.model("Wishlist", wishlistSchema);
 
 module.exports = Wishlist;
