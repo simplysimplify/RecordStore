@@ -14,7 +14,6 @@ const getArtist = async (query) => {
           ...new Map(results.map((item) => [item.title, item])).values(),
         ];
         console.log(uniqueObjects);
-        // window.location.assign("/results");
         return results;
 }
 
@@ -28,7 +27,6 @@ const getAlbum = async (query) => {
       const res2 = await axios.get(`${albumUrl}`)
         const results = res2.data
         console.log(results)
-        // window.location.assign("/results");
         return results;
 }
 
