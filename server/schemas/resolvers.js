@@ -7,13 +7,15 @@ const resolvers = {
     users: async () => {
       return await User.find();
     },
+    wishlists: async () => {
+      return await Wishlist.find();
+    }
   },
 
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
-
       return { token, user };
     },
     updateUser: async (parent, args, context) => {
@@ -25,6 +27,13 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
+
+    addWishlist: async (parent, args) => {
+      const wishlist = await wishlist.create(args);
+      const token = signToken(wishlist);
+      return { token, wishlist };
+    },
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
