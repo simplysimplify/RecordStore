@@ -20,4 +20,4 @@ const wishlistSchema = new Schema({
 
 const Wishlist = model("Wishlist", wishlistSchema);
 
-module.exports = User;
+module.exports = Wishlist;
