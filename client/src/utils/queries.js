@@ -4,8 +4,12 @@ export const QUERY_USER = gql`
   {
     user {
       username
-      wishlist
+      wishlist {
+        title
+        artist
+        release
+        website
+      }
     }
   }
 `;
-

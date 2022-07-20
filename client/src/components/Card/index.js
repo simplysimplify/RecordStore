@@ -47,7 +47,7 @@ export function AlbumCard({ obj }) {
       <Card.Title>{obj.title}</Card.Title>
       {obj.artists.map((artist, i) => (
         <Card.Text key={i}>Artist: {artist.name}</Card.Text>
-      ))}
+        ))}
       <Card.Text>Release Year: {obj.year}</Card.Text>
       <a href={obj.uri} rel="noopener" target="_blank">Click here to visit store page.</a>
       <Button onClick={handleAdd}>Add to Wishlist</Button>
