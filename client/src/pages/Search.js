@@ -51,7 +51,7 @@ function Search(props) {
   return (
     <>
       <div className="container col-12 d-flex flex-column text-center align-content-center justify-content-center">
-        <h1 className="jumbotron">Record Store!</h1>
+        <h1 className="jumbotron">Search for an album or an artist!</h1>
         <DropdownButton
           onSelect={handleSelect}
           className="mb-1"

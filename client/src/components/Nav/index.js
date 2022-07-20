@@ -11,7 +11,7 @@ function Nav() {
           <a href="/" onClick={() => Auth.logout()}>
             Logout
           </a>
-          <a href="/" onClick={() => Auth.logout()}>
+          <a href="/wishlist">
             Wishlist
           </a>
         </>

@@ -24,7 +24,7 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_WISHLIST = gql`
- mutation addFavorite($artist: String, $album: String, $song: String) {
+ mutation wishlist($artist: String, $album: String, $song: String) {
   search(artist: $artist, album: $album, song: $song) {
    token
    user {
@@ -33,3 +33,4 @@ export const ADD_WISHLIST = gql`
   }
  }
 `;
+

@@ -8,11 +8,8 @@ export default function Wishlist(props) {
 
   return (
     <Container className="d-flex flex-wrap justify-content-center">
-      {props.data.map((obj, i) => (
-        <Card key={i} className="m-2">
-            <AlbumCard obj={obj} />
-        </Card>
-      ))}
+
+      <h1 className="jumbotron ">Wishlist!</h1>
     </Container>
   );
 }
